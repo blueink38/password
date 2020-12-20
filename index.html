@@ -24,13 +24,12 @@
             aria-label="Generated Password"
           ></textarea>
 <!-- begin criteria box -->
-        <form>
-          <div class="criteria-box">
+        <form class="criteria">
 <!-- number range -->
+<div>
             <label for="passwordLength">Number of Characters (8-128)</label>
-              <input type="range" min="8" max="128" id="passwordLengthRange">
               <input type="number" min="8" max="128" id="passwordLengthNumber">
-
+        </div><br>
 <!-- uppercase letters -->
             <label for="chooseUpperCase">Include Uppercase Letters</label>
               <input type="checkbox" id="chooseUppercase">
@@ -47,7 +46,6 @@
             <label for="chooseSymbols">Include Symbols</label>
               <input type="checkbox" id="chooseSymbols">
 
-          </div>
       </form>
 <!-- end criteria box -->
 

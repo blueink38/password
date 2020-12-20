@@ -57,6 +57,16 @@ header {
   min-height: 100px;
 }
 
+.criteria {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 1rem;
+  row-gap: 2rem;
+  justify-content: center;
+  align-content: center;
+}
+
+
 .card-footer {
   text-align: center;
 }
