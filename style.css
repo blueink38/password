@@ -13,8 +13,11 @@ body,
 }
 
 body {
-  font-family: sans-serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   background-color: #f9fbfd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrapper {
@@ -57,13 +60,40 @@ header {
   min-height: 100px;
 }
 
+.password-display-window {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 85px;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px dashed #c0c7cf;
+  border-radius: 6px;
+  resize: none;
+  overflow: hidden;
+}
+  
+
+
+
 .criteria {
   display: grid;
   grid-template-columns: auto auto;
   column-gap: 1rem;
-  row-gap: 2rem;
+  row-gap: 1.5rem;
   justify-content: center;
-  align-content: center;
+  align-items: center;
+}
+
+.number {
+  width: 3rem;
 }
 
 
@@ -110,26 +140,6 @@ button[disabled] {
   float: right;
 }
 
-#password {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  display: block;
-  width: 100%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 85px;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
-  border-radius: 6px;
-  resize: none;
-  overflow: hidden;
-}
 
 @media (max-width: 690px) {
   .btn {
