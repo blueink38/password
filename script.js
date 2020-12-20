@@ -1,31 +1,31 @@
 // Assignment code here
 
 // Elements
-const yourPasswordElement = document.getElementById('output');
-const yourLengthElement = document.getElementById('lenth');
-const yourUpperElement = document.getElementById('upper');
-const yourLowerElement = document.getElementById('lower');
-const yourNumberElement = document.getElementById('number');
-const yourSymbolElement = document.getElementById('symbol');
-
+const yourPasswordElement = document.getElementById('password');
+const yourLengthElement = document.getElementById('passwordLengthNumber');
+const yourUpperElement = document.getElementById('chooseUppercase');
+const yourLowerElement = document.getElementById('chooseLowercas');
+const yourNumberElement = document.getElementById('chooseNumbers');
+const yourSymbolElement = document.getElementById('chooseSymbols');
+const yourGenerate = document.getElementById('generate');
 
 
 // randomizing function
 const randomizer = {
-  getuppercase: randomUpper,
-  getlowercase: randomLower,
-  getnumber: randomNumber,
-  getsymbol: randomSymbol,
+  getUpperCase: randomUpper,
+  getLowerCase: randomLower,
+  getNumber: randomNumber,
+  getSymbol: randomSymbol,
 };
 
-generateElement.addEventListener('click', () => {
-  const length = +yourLengthElement.value;
+yourGenerate.addEventListener('click', () => {
+  const hasPasswordLength = +yourLengthElement.value;
   const hasUpperCase = yourUpperElement.checked;
   const hasLowerCase = yourLowerElement.checked;
   const hasNumber = yourNumberElement.checked;
   const hasSymbol = yourSymbolElement.checked;
 
-  console.log(hasUpperCase, hasLowerCase, hasNumber, hasSymbol);
+  console.log(hasPasswordLength, hasUpperCase, hasLowerCase, hasNumber, hasSymbol);
 });
 
 

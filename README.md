@@ -12,7 +12,7 @@
 * [Contact](#contact)
 
 ## General info
-In a world with the increased need of online security, I have created a simple, streamlined webite that will generate a unique password for the user.  The user can choose the length from 8-128 characters long and with any combination of upper case or lower case letters as well as numbers and symbols.
+In a world with the increased need of online security, I have created a simple, streamlined webite that will generate a unique password for the user.  The user can choose the length from 8-128 characters long and with any combination of upper-case or lower-case letters as well as numbers and symbols.
 
 ## Screenshots
 ![Example screenshot](./img/screenshot.png)
@@ -23,10 +23,11 @@ In a world with the increased need of online security, I have created a simple, 
 * JavaScript 1.8.5
 
 ## Setup
-This website can be found using the link at the bottom of the README file.
+This can be found at:  
+https://blueink38.github.io/password/
 
 ## Code Examples
-Show examples of usage:
+Examples of usage:  
 `return String.fromCharCode(Math.floor(Math.random() * 26) + 97);`
 
 ## Features
