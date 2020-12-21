@@ -17,40 +17,12 @@
           <h2>Generate a Password</h2>
         </div>
         <div class="card-body">
-
-<!-- start new password display box -->
-          <h3 class="password-display-window" id="password">your password</h3>
- <!--         id="password"-->
- <!--         aria-label="Generated Password" -->
-
-<!-- end new password display box -->
-
-<!-- begin criteria box -->
-        <form class="criteria">
-<!-- number range -->
-          <div>
-            <label for="passwordLengthNumber">Number of Characters (8-128)</label>
-              <input type="number" min="8" max="128" id="passwordLengthNumber">
-          </div><br>
-<!-- uppercase letters -->
-            <label for="chooseUpperCase">Include Uppercase Letters</label>
-              <input type="checkbox" id="chooseUppercase">
-
-<!-- lower case letters -->
-            <label for="chooseLowerCase">Include Lowercase Letters</label>
-              <input type="checkbox" id="chooseLowercase">
-
-<!-- numbers -->
-            <label for="chooseNumbers">Include Numbers</label>
-              <input type="checkbox" id="chooseNumbers">
-
-<!-- symbols -->
-            <label for="chooseSymbols">Include Symbols</label>
-              <input type="checkbox" id="chooseSymbols">
-
-      </form>
-<!-- end criteria box -->
-
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>

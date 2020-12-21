@@ -1,95 +1,73 @@
 // Assignment code here
 
-// Elements
-const yourPasswordElement = document.getElementById('password');
-const yourLengthElement = document.getElementById('passwordLengthNumber');
-const yourUpperElement = document.getElementById('chooseUppercase');
-const yourLowerElement = document.getElementById('chooseLowercase');
-const yourNumberElement = document.getElementById('chooseNumbers');
-const yourSymbolElement = document.getElementById('chooseSymbols');
-const yourGenerate = document.getElementById('generate');
+var letterUpper = ["A","B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var letterLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "{", "}"];
 
-
-// randomizing function
-const randomizer = {
-  getUpperCase: randomUpper,
-  getLowerCase: randomLower,
-  getNumber: randomNumber,
-  getSymbol: randomSymbol,
+function getPasswords() {
+  var ul = document.getElementById('passwords');
+  var count = +promptValue.value;
+  for(var i = 0; i < promptValue; i++)
+    generatePassword();
 };
-
-yourGenerate.addEventListener('click', () => {
-  const hasPasswordLength = +yourLengthElement.value;
-  const hasUpperCase = yourUpperElement.checked;
-  const hasLowerCase = yourLowerElement.checked;
-  const hasNumber = yourNumberElement.checked;
-  const hasSymbol = yourSymbolElement.checked;
-
-yourPasswordElement.writePassword = generatePassword(hasPasswordLength, hasUpperCase, hasLowerCase, hasNumber, hasSymbol);
-});
-
-// Generate password
-function generatePassword(hasPasswordlength, getUpperCase, getLowerCase, getNumber, getSymbol) {
-  let generatePassword = '';
-
-  const whatWasChosen = getUpperCase + getLowerCase + getNumber + getSymbol;
-  console.log('whatWasChosen: ', whatWasChosen);
-
-  const types = [{getUpperCase}, {getLowerCase}, {getNumber}, {getSymbol}];
-  console.log('types: ', types);
-
-}
-
-
-
-// Choose LENGTH of password 8-128
-// function passwordLength() {
-//  return number(passwordLengthNumber);
-//}
- //console.log(passwordLength())
-
-// generate random LOWERCASE letter
-function randomLower() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-console.log(randomLower())
-
-// generate random UPPERCASE letter
-function randomUpper() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
-console.log(randomUpper())
-
-// generate random NUMBER
-function randomNumber() {
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
-console.log(randomNumber())
-
-// generate random SYMBOL
-function randomSymbol() {
-  const symbols = '!@#$%^&*(){}[]?';
-  return symbols[Math.floor(Math.random() * symbols.length)];
-}
-console.log(randomSymbol())
 
 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-//generateBtn.addEventListener('click', () => {
-//const length = +yourLengthElement.value;
-//  const upper = yourUpperElement.checked;
-//  const lower = yourLowerElement.checked;
-//  const number = yourNumberElement.checked;
-//  const symbol = yourSymbolElement.checked;
 
-//  console.log(length, upper, lower, number, symbol);
-//});
+// generate password
+
+
+
+function generatePassword() {
+  var promptValue = window.prompt('Choose a password length between 8-128');
+  console.log('promptValue: ', promptValue);
+  var promptUpper = window.confirm('Would you like to use Upper Case Letter?');
+  console.log('prompUpper: ', promptUpper)
+  var promptLower = window.confirm('Would you like to use Lower Case Letters?');
+  console.log('prompLower: ', promptLower)
+  var promptNumber = window.confirm('Would you like to use Numbers?');
+  console.log('prompNumber: ', promptNumber)
+  var promptSymbol = window.confirm('Would you like to use Symbols?')
+  console.log('prompSymbol: ', promptSymbol)
+
+  while(promptValue === false && promptUpper === false && promptLower === false && promptNumber === false && promptSymbol === false) {
+    window.alert('Please choose at least one character set to continue');
+    var promptUpper = window.confirm('Would you like to use Upper Case Letter?');
+    var promptLower = window.confirm('Would you like to use Lower Case Letters?');
+    var promptNumber = window.confirm('Would you like to use Numbers?');
+    var promptSymbol = window.confirm('Would you like to use Symbols?')
+  }
+  
+  var chosen =[]
+  var passwordCharacters = []
+    if (promptUpper) {
+      passwordCharacters = passwordCharacters.concat(letterUpper)
+    }
+    if (promptLower) {
+      passwordCharacters = passwordCharacters.concat(letterLower)
+    }
+    if (promptNumber) {
+      passwordCharacters = passwordCharacters.concat(number)
+    }
+    if (promptSymbol) {
+      passwordCharacters = passwordCharacters.concat(symbol)
+    }
 
 
 // Write password to the #password input
+var password = [];
+var length = +promptValue.length;
+for(var i= 0; i < length; i++) {
+  var password = math.floor(Math.random() * chosen.length);
+  password += chosen[random];
+}
+return password;
+}
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -99,4 +77,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
- generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
