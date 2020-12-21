@@ -5,22 +5,14 @@ var letterLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
 var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "{", "}"];
 
-function getPasswords() {
-  var ul = document.getElementById('passwords');
-  var count = +promptValue.value;
-  for(var i = 0; i < promptValue; i++)
-    generatePassword();
-};
+
 
 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-
 // generate password
-
-
 
 function generatePassword() {
   var promptValue = window.prompt('Choose a password length between 8-128');
@@ -34,35 +26,14 @@ function generatePassword() {
   var promptSymbol = window.confirm('Would you like to use Symbols?')
   console.log('prompSymbol: ', promptSymbol)
 
-  while(promptValue === false && promptUpper === false && promptLower === false && promptNumber === false && promptSymbol === false) {
-    window.alert('Please choose at least one character set to continue');
-    var promptUpper = window.confirm('Would you like to use Upper Case Letter?');
-    var promptLower = window.confirm('Would you like to use Lower Case Letters?');
-    var promptNumber = window.confirm('Would you like to use Numbers?');
-    var promptSymbol = window.confirm('Would you like to use Symbols?')
-  }
   
-  var chosen =[]
-  var passwordCharacters = []
-    if (promptUpper) {
-      passwordCharacters = passwordCharacters.concat(letterUpper)
-    }
-    if (promptLower) {
-      passwordCharacters = passwordCharacters.concat(letterLower)
-    }
-    if (promptNumber) {
-      passwordCharacters = passwordCharacters.concat(number)
-    }
-    if (promptSymbol) {
-      passwordCharacters = passwordCharacters.concat(symbol)
-    }
 
 
 // Write password to the #password input
 var password = [];
 var length = +promptValue.length;
 for(var i= 0; i < length; i++) {
-  var password = math.floor(Math.random() * chosen.length);
+  var password = math.floor(Math.random() * promptValue.length);
   password += chosen[random];
 }
 return password;
