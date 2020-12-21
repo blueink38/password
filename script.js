@@ -4,7 +4,7 @@
 const yourPasswordElement = document.getElementById('password');
 const yourLengthElement = document.getElementById('passwordLengthNumber');
 const yourUpperElement = document.getElementById('chooseUppercase');
-const yourLowerElement = document.getElementById('chooseLowercas');
+const yourLowerElement = document.getElementById('chooseLowercase');
 const yourNumberElement = document.getElementById('chooseNumbers');
 const yourSymbolElement = document.getElementById('chooseSymbols');
 const yourGenerate = document.getElementById('generate');
@@ -25,8 +25,20 @@ yourGenerate.addEventListener('click', () => {
   const hasNumber = yourNumberElement.checked;
   const hasSymbol = yourSymbolElement.checked;
 
-  console.log(hasPasswordLength, hasUpperCase, hasLowerCase, hasNumber, hasSymbol);
+yourPasswordElement.writePassword = generatePassword(hasPasswordLength, hasUpperCase, hasLowerCase, hasNumber, hasSymbol);
 });
+
+// Generate password
+function generatePassword(hasPasswordlength, getUpperCase, getLowerCase, getNumber, getSymbol) {
+  let generatePassword = '';
+
+  const whatWasChosen = getUpperCase + getLowerCase + getNumber + getSymbol;
+  console.log('whatWasChosen: ', whatWasChosen);
+
+  const types = [{getUpperCase}, {getLowerCase}, {getNumber}, {getSymbol}];
+  console.log('types: ', types);
+
+}
 
 
 
@@ -66,15 +78,15 @@ console.log(randomSymbol())
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-generateBtn.addEventListener('click', () => {
-  const length = +yourLengthElement.value;
-  const upper = yourUpperElement.checked;
-  const lower = yourLowerElement.checked;
-  const number = yourNumberElement.checked;
-  const symbol = yourSymbolElement.checked;
+//generateBtn.addEventListener('click', () => {
+//const length = +yourLengthElement.value;
+//  const upper = yourUpperElement.checked;
+//  const lower = yourLowerElement.checked;
+//  const number = yourNumberElement.checked;
+//  const symbol = yourSymbolElement.checked;
 
-  console.log(length, upper, lower, number, symbol);
-});
+//  console.log(length, upper, lower, number, symbol);
+//});
 
 
 // Write password to the #password input
